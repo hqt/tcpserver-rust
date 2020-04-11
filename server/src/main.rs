@@ -1,3 +1,6 @@
+mod id_generator;
+mod client_manager;
+
 mod server;
 
 fn main() {

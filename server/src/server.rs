@@ -1,15 +1,18 @@
 use std::net::{TcpListener, TcpStream};
 use std::{io, thread};
 use std::io::{Read, Write};
+use crate::client_manager::ClientManager;
 
 // Server struct represents the server
 pub struct Server {
+    client_managers: ClientManager,
     listener: Option<TcpListener>,
 }
 
 impl Server {
     pub fn new() -> Server {
         Server {
+            client_managers: ClientManager::new(),
             listener: None,
         }
     }
